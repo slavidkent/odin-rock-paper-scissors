@@ -17,7 +17,7 @@ body {
 }
 header {
     font-family: 'Passion One', cursive;
-    width: min(90vw,1000px);
+    width: min(90vw, 1000px);
     margin-top: 10px;
     border: 5px solid #242424;
     border-radius: 10px;
@@ -32,7 +32,7 @@ main {
 }
 footer {
     background-color: #f3e3cf;
-    width: min(90vw,1000px);
+    width: min(90vw, 1000px);
     height: 50px;
     display: flex;
     justify-content: center;
@@ -64,7 +64,6 @@ header > p {
 /* ==================main styling =====================*/
 
 /* display */
-
 #displays-container {
     width: min(500px, 90vw);
     aspect-ratio: 1/1;
@@ -78,8 +77,10 @@ header > p {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
+
+/* a gray overlay screen to cover the content and game play button  */
 #gray-out-container {
     width: 100%;
     height: 100%;
@@ -119,6 +120,45 @@ header > p {
     margin: 0 auto;
     font-size: 30px;
 }
+
+/* choices display made by player and computer */
+.display-choice {
+    aspect-ratio: 1/1;
+    width: 40%;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #242424;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+.display-choice i {
+    aspect-ratio: 1/1;
+    font-size: 150px;
+    color: #242424;
+}
+
+#computer-choice {
+    transform: rotate(180deg);
+}
+
+/* game ending display */
+#game-end{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 3;
+}
+#game-end button{
+    
+}
+
+/* play button styling  */
 .display-button {
     width: 100px;
     height: 100px;
@@ -154,20 +194,40 @@ header > p {
 .hide {
     display: none;
 }
-.score{
+#guide-1{
+    position: absolute;
+    font-size: 1.5rem;
+    background-color: #e4e2e2;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(97, 81, 63);
+    bottom:6px;
+    left:70px;
+}
+
+/* score inside display  */
+.score {
     position: absolute;
     font-size: 1.5rem;
 }
-.score div{
+.score div {
     display: inline;
 }
-.score.computer-score{
-    top:8px;
-    left:8px;
+.score.computer-score {
+    top: 8px;
+    left: 8px;
 }
-.score.player-score{
-    bottom:8px;
-    left:8px;
+.score.player-score {
+    bottom: 8px;
+    left: 8px;
+}
+.score.draw-number {
+    top: 8px;
+    right: 8px;
+}
+.score.round-number {
+    bottom: 8px;
+    right: 8px;
 }
 
 /* game button section */
@@ -202,6 +262,9 @@ header > p {
     background-color: rgb(243, 243, 237);
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+.game-button:active{
+    transform: scale(100%);
 }
 .game-button i {
     display: block;

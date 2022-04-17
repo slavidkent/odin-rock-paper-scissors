@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="app.js" defer></script>
     <title>Rock Paper Scissors</title>
 </head>
 
@@ -21,10 +21,16 @@
 
     <main>
         <div id="displays-container">
-            <div id="gray-out-container"></div>
-            <button class="display-button" id="play-button"><i class="fa-solid fa-play"></i></button>
-            <button class="display-button hide" id="reset-button"><i
-                    class="fa-solid fa-arrow-rotate-right"></i></button>
+
+            <!-- play button and grey out area -->
+            <div id="gray-out-container">
+                <p id="guide-1">&#8592;Get 5 Star to Win!</p>
+            </div>
+            <button class="display-button" id="play-button">
+                <i class="fa-solid fa-play"></i>
+            </button>
+
+            <!-- score and data display -->
             <div class="score computer-score">
                 <i class="fa-solid fa-star"></i>
                 <div id="computer-score-number">0</div>
@@ -33,25 +39,43 @@
                 <i class="fa-solid fa-star"></i>
                 <div id="player-score-number">0</div>
             </div>
-            <div class="score rounds">
-                
+            <div class="score draw-number">
+                <div>Draw: </div>
+                <div id="total-draw-number">0</div>
             </div>
-            <!-- <div class="display" id="winner-display"></div>
-            <div class="display" id="computer-display"></div> -->
+            <div class="score round-number">
+                <div>Round: </div>
+                <div id="total-round-number">0</div>
+            </div>
+
+            <!-- choice display -->
+            <div class="display display-choice hide" id="computer-choice"></div>
             <div class="display" id="display-result"></div>
-            <!-- <div class="display" id="player-display"></div> -->
+            <div class="display display-choice hide" id="player-choice"></div>
+
         </div>
 
+        <!-- button for playing the game -->
         <div id="buttons-container">
             <div id="gray-out-container">
                 <p>Click play button above to start.</p>
             </div>
-            <button class="game-button" value="rock">Rock<i class="fa-solid fa-hand-back-fist"></i></i></button>
+            <button class="game-button" value="rock">Rock<i class="fa-solid fa-hand-back-fist"></i></button>
             <button class="game-button" value="paper">Paper<i class="fa-solid fa-hand"></i></button>
             <button class="game-button" value="scissors">Scissors<i class="fa-solid fa-hand-scissors"></i></button>
         </div>
 
     </main>
+
+    <!-- end game screen -->
+    <div id="game-end hide">
+        <button class="display-button hide" id="reset-button">
+            <div>
+                <p id="win-lose-game-end"></p>
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+            </div>
+        </button>
+    </div>
 
     <footer>
         <p>created by
