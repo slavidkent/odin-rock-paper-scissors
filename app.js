@@ -1,8 +1,20 @@
-let playerScore = 0;
-let computerScore = 0;
+const playButton = document.querySelector('#play-button');
+const grayOutContainer = document.querySelectorAll('#gray-out-container');
 const buttons = document.querySelectorAll('.game-button');
 const display = document.querySelector('#display-result');
 const reset = document.querySelector('#reset-game');
+const playerScoresDisplay = document.querySelector('#player-score-number')
+const computerScoresDisplay = document.querySelector('#computer-score-number')
+
+let playerScore = 0;
+let computerScore = 0;
+let play = false;
+
+playButton.addEventListener('click', (e) => {
+    play = true;
+    grayOutContainer.forEach((element) => (element.style.display = 'none'));
+    playButton.style.display = 'none';
+});
 
 buttons.forEach((button) => button.addEventListener('click', playRound));
 reset.addEventListener('click', resetRound);
@@ -14,10 +26,10 @@ function computerPlay() {
 }
 
 function playRound(e) {
-    const playerSelection = e.target.value;
+    const playerSelection = e.currentTarget.value;
     const computerSelection = computerPlay();
 
-    console.log('I play       : ' + e.target.value);
+    console.log('I play       : ' + e.currentTarget.value);
     console.log('computer play: ' + computerSelection);
 
     if (playerSelection === computerSelection) {
@@ -47,6 +59,9 @@ function playRound(e) {
             display.textContent = 'You Lose! Scissors beats Paper';
         }
     }
+
+    console.log('player score: ' + playerScore);
+    console.log('computer score: ' + computerScore);
 
     if (playerScore >= 5) {
         display.textContent = 'Congratulation! You Win 5 total scores.';

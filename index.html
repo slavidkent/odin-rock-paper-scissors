@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Rock Paper Scissors</title>
 </head>
+
 <body>
-    <div id="display-result"></div>
-    <button class="game-button" value="rock">Rock</button>
-    <button class="game-button" value="paper">Paper</button>
-    <button class="game-button" value="scissors">Scissors</button>
-    <br>
-    <button id="reset-game">Reset</button>
+    <header>
+        <h1>Rock Paper Scissors</h1>
+        <p>A game of chances ~~~</p>
+    </header>
+
+    <main>
+        <div id="displays-container">
+            <div id="gray-out-container"></div>
+            <button class="display-button" id="play-button"><i class="fa-solid fa-play"></i></button>
+            <button class="display-button hide" id="reset-button"><i
+                    class="fa-solid fa-arrow-rotate-right"></i></button>
+            <div class="score computer-score">
+                <i class="fa-solid fa-star"></i>
+                <div id="computer-score-number">0</div>
+            </div>
+            <div class="score player-score">
+                <i class="fa-solid fa-star"></i>
+                <div id="player-score-number">0</div>
+            </div>
+            <div class="score rounds">
+                
+            </div>
+            <!-- <div class="display" id="winner-display"></div>
+            <div class="display" id="computer-display"></div> -->
+            <div class="display" id="display-result"></div>
+            <!-- <div class="display" id="player-display"></div> -->
+        </div>
+
+        <div id="buttons-container">
+            <div id="gray-out-container">
+                <p>Click play button above to start.</p>
+            </div>
+            <button class="game-button" value="rock">Rock<i class="fa-solid fa-hand-back-fist"></i></i></button>
+            <button class="game-button" value="paper">Paper<i class="fa-solid fa-hand"></i></button>
+            <button class="game-button" value="scissors">Scissors<i class="fa-solid fa-hand-scissors"></i></button>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>created by
+            <a href="https://github.com/slavidkent">Kent
+                <img src="./images/github-icon.png" alt="github icon">
+            </a>
+        </p>
+    </footer>
 </body>
+
 </html>
