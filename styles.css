@@ -77,7 +77,8 @@ header > p {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 /* a gray overlay screen to cover the content and game play button  */
@@ -116,7 +117,7 @@ header > p {
     }
 }
 .display {
-    display: block;
+    text-align: center;
     margin: 0 auto;
     font-size: 30px;
 }
@@ -144,7 +145,7 @@ header > p {
 }
 
 /* game ending display */
-#game-end{
+.game-end{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,8 +155,25 @@ header > p {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 3;
 }
-#game-end button{
-    
+#game-end-container{
+    width:max(30vw, 400px);
+    height:max(30vh, 200px);
+    border-radius:30px;
+    background-color: #f3e3cf;
+    border: 5px solid #242424;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#win-lose-game-end{
+    font-size: 20px;
+    font-weight: 500;
+}
+#reset-button{
+    position:static;
+    margin: 15px 0 0 0 ;
+    font-size: 30px;
 }
 
 /* play button styling  */
